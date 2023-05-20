@@ -22,11 +22,18 @@ Route::get('/', function () {
     ]);
 });
 
-//Single Listing
-Route::get('/listings/{id}',function($id){
+Route::get('/listings', function () {
+    return view('listings',[
+        'heading' => 'Latest Listings',
+        'listings' => Listing::all()
+    ]);
+});
+
+// Listing is an elloquent model 
+Route::get('/listings/{listing}',function(Listing $listing){
     return view('listing',[
         'heading' => 'The Job You Are Looking For',
-        'listing' => Listing::find($id)
+        'listing' => $listing
     ]);
 });
 

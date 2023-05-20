@@ -12,13 +12,15 @@
                 <i class="fa-solid fa-arrow-left"></i> Back
             </a>
             <div class="mx-4">
-                <div class="bg-gray-50 border border-gray-200 p-10 rounded">
+
+                {{-- Here x-card is a componenet tag --}}
+                <x-card class="p-4">
                     <div
                         class="flex flex-col items-center justify-center text-center"
                     >
                         <img
                             class="w-48 mr-6 mb-6"
-                            src="images/no-image.png"
+                            src={{asset("images/no-image.png")}}
                             alt=""
                         />
 
@@ -73,6 +75,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </x-card>
             </div>
 @endsection
