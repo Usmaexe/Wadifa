@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 // ::get("the end path","closure which is a function") 
 //All listings
-Route::get('/listings', function () {
+Route::get('/', function () {
     return view('listings',[
         'heading' => 'Latest Listings',
         'listings' => Listing::all()
@@ -29,7 +29,6 @@ Route::get('/listings/{id}',function($id){
         'listing' => Listing::find($id)
     ]);
 });
-
 
 
 
