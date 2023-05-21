@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ListingController;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -13,46 +15,40 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// ::get("the end path","closure which is a function") 
-//All listings
-Route::get('/', function () {
-    return view('listings',[
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-    ]);
-});
 
-Route::get('/listings', function () {
-    return view('listings',[
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-    ]);
-});
+Route::get('/', [HomeController::class,'index']);
+
+Route::get('/listings',[ListingController::class,'index']);
 
 // Listing is an elloquent model 
-Route::get('/listings/{listing}',function(Listing $listing){
-    return view('listing',[
-        'heading' => 'The Job You Are Looking For',
-        'listing' => $listing
-    ]);
-});
+Route::get('/listings/{listing}',[ListingController::class,'show']);
 
 
 
-// -----------------------------------Testing
-// Route::get('/hello',function(){
-//     //Response render the HTML and we can add status to it (202)
-//     //By default the type of rendring is TEXT/HTML
-//     return response('<h1>Hello world</h1>',200)
-//     ->header('Content-Type','text/plain');
-// });
+// Common Resource Routes:
+    // index - Show All
+    // show - Show Single
+    // create - Show Form To Create New Single
+    // store - Store New Single
+    // edit - Store Form To Edit Single
+    // update - Updated Single
+    // destroy - Delete Listing
 
-// Route::get('/posts/{id}',function($id){
-//     // dd($id); //die and dump debug 
-//     return response('<h1>Post'.$id.'</h1>');
-// })->where('id' , '[0-9]+');
 
-// Route::get('/search',function(Request $request){
-//     // dd($request->name . ' ' . $request->password );
-//     return response("<h1>".$request->name . ' ' . $request->password."</h1>");
-// });
+// Testing
+    // Route::get('/hello',function(){
+    //     //Response render the HTML and we can add status to it (202)
+    //     //By default the type of rendring is TEXT/HTML
+    //     return response('<h1>Hello world</h1>',200)
+    //     ->header('Content-Type','text/plain');
+    // });
+
+    // Route::get('/posts/{id}',function($id){
+    //     // dd($id); //die and dump debug 
+    //     return response('<h1>Post'.$id.'</h1>');
+    // })->where('id' , '[0-9]+');
+
+    // Route::get('/search',function(Request $request){
+    //     // dd($request->name . ' ' . $request->password );
+    //     return response("<h1>".$request->name . ' ' . $request->password."</h1>");
+    // });
