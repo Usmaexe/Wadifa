@@ -7,6 +7,7 @@
   <link rel="icon" href={{asset('images/suitcase.ico')}}>
   <title>{{config('app.name')}} | @yield('page_title')</title>
   <script src="https://kit.fontawesome.com/4ee982e396.js" crossorigin="anonymous"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
           <script>
             tailwind.config = {

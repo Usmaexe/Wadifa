@@ -2,7 +2,7 @@
 {{$title}}
 @endsection
 <x-layout>
-  <x-card class=" p-10 rounded max-w-lg mx-auto mt-24">
+  <x-card class=" p-10 rounded max-w-lg mx-auto mt-4">
                     <header class="text-center">
                         <h2 class="text-2xl font-bold uppercase mb-1">
                             Create a Gig
@@ -22,6 +22,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="company"
+                                value = {{old('company')}}
                             />
                             @error('company')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -37,6 +38,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="title"
                                 placeholder="Example: Senior Laravel Developer"
+                                value = {{old('title')}}
                             />
                             @error('title')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -54,6 +56,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="location"
                                 placeholder="Example: Remote, Boston MA, etc"
+                                value = {{old('location')}}
                             />
                             @error('location')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -68,6 +71,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
+                                value = {{old('email')}}
                             />
                             
                             @error('email')
@@ -86,6 +90,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="website"
+                                value = {{old('website')}}
                             />
                             @error('website')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -101,6 +106,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="tags"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
+                                value = {{old('tags')}}
                             />
                             
                             @error('tags')
@@ -131,7 +137,9 @@
                                 name="description"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
-                            ></textarea>
+                            >
+                                {{old('company')}}
+                            </textarea>
                             
                             @error('description')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -145,7 +153,7 @@
                                 Create Gig
                             </button>
 
-                            <a href="/" class="text-black ml-4"> Back </a>
+                            <a href="/listings" class="text-black ml-4"> Back To Listings</a>
                         </div>
                     </form>
   </x-card>

@@ -18,6 +18,10 @@
     <h4>No Listings Found</h4>
 @endif
 </div>
+<div class="mt-6 p-4">
+    {{-- links allow us to link all the pages together with buttons --}}
+    {{$listings->links()}}
+</div>
 </x-layout>
 
 

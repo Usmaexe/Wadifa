@@ -14,7 +14,8 @@ class ListingController extends Controller
         return view('listings.index',[
             'title' => 'Jobs Available',
             'heading' => 'Latest Listings',
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+            //here instead of writing get we did paginate to have pages and we have 4 elements per page
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->simplePaginate(4)
         ]);
     }
 
