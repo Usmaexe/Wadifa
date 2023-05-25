@@ -10,7 +10,7 @@
                         <p class="mb-4">Post a gig to find a developer</p>
                     </header>
 
-                    <form method="POST" action="/listings">
+                    <form method="POST" action="/listings" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-6">
                             <label
@@ -22,7 +22,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="company"
-                                value = {{old('company')}}
+                                value = "{{old('company')}}"
                             />
                             @error('company')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -38,7 +38,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="title"
                                 placeholder="Example: Senior Laravel Developer"
-                                value = {{old('title')}}
+                                value = "{{old('title')}}"
                             />
                             @error('title')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -56,7 +56,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="location"
                                 placeholder="Example: Remote, Boston MA, etc"
-                                value = {{old('location')}}
+                                value = "{{old('location')}}"
                             />
                             @error('location')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -71,7 +71,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
-                                value = {{old('email')}}
+                                value = "{{old('email')}}"
                             />
                             
                             @error('email')
@@ -90,7 +90,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="website"
-                                value = {{old('website')}}
+                                value = "{{old('website')}}"
                             />
                             @error('website')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>
@@ -106,7 +106,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="tags"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
-                                value = {{old('tags')}}
+                                value = "{{old('tags')}}"
                             />
                             
                             @error('tags')
@@ -138,7 +138,7 @@
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
                             >
-                                {{old('company')}}
+                                "{{old('company')}}"
                             </textarea>
                             
                             @error('description')
