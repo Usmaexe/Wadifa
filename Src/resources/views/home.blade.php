@@ -5,7 +5,8 @@
   <meta name="theme-color" content="#4258f4"/>{{-- This Changes the color on mobile browser --}}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{config('app.name')}} | @yield('page_title')</title>
+  <title>{{config('app.name')}} | {{$title}}</title>
+  <link rel="icon" href={{asset('images/suitcase.ico')}}>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
@@ -71,7 +72,7 @@
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
             <a
-                href="create.html"
+                href="/listings/create"
                 class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
                 >Post Job</a
             >

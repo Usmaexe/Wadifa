@@ -1,5 +1,6 @@
 <x-layout>
     {{-- x-layout is a component rendring in laravel --}}
+    
             {{-- Setting a title for the page --}}
             @section ('page_title')
                 {{$listing['title']}}

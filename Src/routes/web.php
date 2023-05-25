@@ -20,9 +20,14 @@ Route::get('/', [HomeController::class,'index']);
 
 Route::get('/listings',[ListingController::class,'index']);
 
+//Show The Create Form 
+Route::get('/listings/create',[ListingController::class,'create']);
+
+//Store Listing Data
+Route::post('/listings',[ListingController::class,'store']);
+
 // Listing is an elloquent model 
 Route::get('/listings/{listing}',[ListingController::class,'show']);
-
 
 
 // Common Resource Routes:

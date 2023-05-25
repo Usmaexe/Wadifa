@@ -9,7 +9,7 @@
     <h1 class="text-6xl font-bold uppercase text-white">
       Lara<span class="text-black">Gigs</span>
     </h1>
-    <p class="text-2xl text-gray-200 font-bold my-4">
+    <p class="text-2xl text-black-200 font-bold my-4">
       Find or post Laravel jobs & projects
     </p>
     <div>

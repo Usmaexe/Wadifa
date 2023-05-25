@@ -1,7 +1,7 @@
 <x-layout>
 
 @section ('page_title')
-    Listings
+    {{$title}}
 @endsection
 
 @include('partials._hero')

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href={{asset('images/suitcase.ico')}}>
   <title>{{config('app.name')}} | @yield('page_title')</title>
   <script src="https://kit.fontawesome.com/4ee982e396.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,10 +50,11 @@
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
             <a
-                href="create.html"
+                href="/listings/create"
                 class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
                 >Post Job</a
             >
         </footer>
+        <x-flash-message />
     </body>
 </html>
