@@ -63,4 +63,38 @@ class ListingController extends Controller
 
         return redirect('/listings');
     }
+
+    // Edit
+    public function edit(Listing $listing){
+        return view('listings.edit',[
+            'listing'=>$listing,
+            'title' => 'Edit' 
+        ]);
+    }
+
+    //Store The Updated Information
+    public function update(Request $request,Listing $listing){
+
+        // The request variable is an array contain all the data that are sent by a page to the app
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required' , 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+        
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('CompanyLogos','public');
+        }
+
+        $listing->update($formFields);
+
+        // flash messages package
+        flash()->updated('Your Job Listing Has Been Updated!');
+
+        return back();
+    }
 }

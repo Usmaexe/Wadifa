@@ -5,7 +5,7 @@ return [
     /*
      * If true, all flash notifications will have an "x" to make them dismissible
      */
-    'dismissible' => true,
+    'dismissible' => false,
 
     /**
      * Defines which css framework will be used. Allowed values are "tailwind" and "bootstrap"
@@ -22,13 +22,13 @@ return [
      */
     'classes' => [
         'tailwind' => [
-            'success' => 'bg-green-500',
-            'error' => 'bg-red-600',
-            'warning' => 'bg-yellow-400',
-            'stored' => 'bg-green-500',
-            'updated' => 'bg-green-500',
-            'deleted' => 'bg-green-500',
-            'queued' => 'bg-green-500',
+            'success' => 'm-2 bg-green-500',
+            'error' => 'm-2 bg-red-600',
+            'warning' => 'm-2 bg-yellow-400',
+            'stored' => 'm-2 bg-green-500',
+            'updated' => 'm-2 bg-green-200',
+            'deleted' => 'm-2 bg-green-500',
+            'queued' => 'm-2 bg-green-500',
         ],
 
         'bootstrap' => [
@@ -105,7 +105,7 @@ return [
             /**
              * Any tailwindcss class
              */
-            'tailwind' => 'bg-red-600 text-white text-sm',
+            'tailwind' => 'm-2 bg-red-600 text-white text-sm',
 
             /**
              * Should be any available bootstrap alert type: success, warning, danger, etc.
