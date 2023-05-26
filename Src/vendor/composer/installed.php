@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '87c5bdcfa5a730803cd29387fe7727c23e4ad704',
+        'reference' => 'd5edafc2c80f65ad8021a634928467c94e98830f',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -364,6 +364,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'josegus/laravel-flash' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => 'af5b0e5f48bfe9a7f5d4f5fa0d0bbd211f3f5ac9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../josegus/laravel-flash',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -382,7 +391,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '87c5bdcfa5a730803cd29387fe7727c23e4ad704',
+            'reference' => 'd5edafc2c80f65ad8021a634928467c94e98830f',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -38,6 +38,9 @@ class ListingController extends Controller
     //To Store Listing Data
     //request here is a dependencie injection
     public function store(Request $request){
+
+        // dd($request->file('logo')->store());//if we did this the file is saved in the app folder
+
         // The request variable is an array contain all the data that are sent by a page to the app
         $formFields = $request->validate([
             'title' => 'required',
@@ -49,8 +52,15 @@ class ListingController extends Controller
             'description' => 'required'
         ]);
         
+        if($request->hasFile('logo')){
+            $formFields['logo'] = $request->file('logo')->store('CompanyLogos','public');
+        }
+
         Listing::create($formFields);
 
-        return redirect('/listings')->with('message','Listing created successfully!');
+        // flash messages package
+        flash()->success('Your Job Listing Has Been Created!');
+
+        return redirect('/listings');
     }
 }

@@ -27,6 +27,7 @@ class ComposerStaticInit4056e375f6746824dc016de1e251f1f0
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '1984bb092ba688ee1c287a2b513b6b4b' => __DIR__ . '/..' . '/josegus/laravel-flash/helpers/flash.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -122,6 +123,10 @@ class ComposerStaticInit4056e375f6746824dc016de1e251f1f0
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
+        ),
+        'J' => 
+        array (
+            'JoseGus\\LaravelFlash\\' => 21,
         ),
         'I' => 
         array (
@@ -408,6 +413,10 @@ class ComposerStaticInit4056e375f6746824dc016de1e251f1f0
         'Laravel\\Sail\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
+        ),
+        'JoseGus\\LaravelFlash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/josegus/laravel-flash/src',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -2797,6 +2806,8 @@ class ComposerStaticInit4056e375f6746824dc016de1e251f1f0
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'JoseGus\\LaravelFlash\\Flash' => __DIR__ . '/..' . '/josegus/laravel-flash/src/Flash.php',
+        'JoseGus\\LaravelFlash\\LaravelFlashServiceProvider' => __DIR__ . '/..' . '/josegus/laravel-flash/src/LaravelFlashServiceProvider.php',
         'Laravel\\Sail\\Console\\AddCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/AddCommand.php',
         'Laravel\\Sail\\Console\\Concerns\\InteractsWithDockerComposeServices' => __DIR__ . '/..' . '/laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',

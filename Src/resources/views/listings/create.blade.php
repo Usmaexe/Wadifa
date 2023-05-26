@@ -22,6 +22,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="company"
+                                placeholder="Your Company Name"
                                 value = "{{old('company')}}"
                             />
                             @error('company')
@@ -70,6 +71,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
+                                placeholder="Example: Company.contact@gmail.com"
                                 name="email"
                                 value = "{{old('email')}}"
                             />
@@ -90,6 +92,7 @@
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="website"
+                                placeholder="Example: www.wadifa.ma"
                                 value = "{{old('website')}}"
                             />
                             @error('website')
@@ -114,7 +117,7 @@
                             @enderror
                         </div>
 
-                        {{-- <div class="mb-6">
+                        <div class="mb-6">
                             <label for="logo" class="inline-block text-lg mb-2">
                                 Company Logo
                             </label>
@@ -123,7 +126,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="logo"
                             />
-                        </div> --}}
+                        </div>
 
                         <div class="mb-6">
                             <label
@@ -137,9 +140,7 @@
                                 name="description"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
-                            >
-                                "{{old('company')}}"
-                            </textarea>
+                            >{{old('company')}}</textarea>
                             
                             @error('description')
                                 <p class="text-red-500 text-xm mt-1">{{$message}}</p>

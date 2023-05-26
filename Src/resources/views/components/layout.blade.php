@@ -40,7 +40,7 @@
                 </li>
             </ul>
         </nav>
-        
+        <x-flash::message/>
         <main>
           {{$slot}}
         </main>
@@ -56,6 +56,5 @@
                 >Post Job</a
             >
         </footer>
-        <x-flash-message />
     </body>
 </html>
