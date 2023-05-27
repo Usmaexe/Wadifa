@@ -97,4 +97,11 @@ class ListingController extends Controller
 
         return back();
     }
+
+    //Delete Listing
+    public function destroy(Listing $listing){
+        $listing->delete();
+        flash()->deleted('The Job Listing Has Been Deleted Succefully!');
+        return redirect('/listings');
+    }
 }

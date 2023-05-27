@@ -22,13 +22,13 @@ return [
      */
     'classes' => [
         'tailwind' => [
-            'success' => 'ml-10 mr-10 bg-green-500',
-            'error' => 'ml-10 mr-10 bg-red-600',
-            'warning' => 'ml-10 mr-10 bg-yellow-400',
-            'stored' => 'ml-10 mr-10 bg-green-500',
-            'updated' => 'ml-10 mr-10 bg-green-700',
-            'deleted' => 'ml-10 mr-10 bg-green-500',
-            'queued' => 'ml-10 mr-10 bg-green-500',
+            'success' => 'ml-10 mr-10 mb-6 bg-green-500',
+            'error' => 'ml-10 mr-10 mb-6 bg-red-600',
+            'warning' => 'ml-10 mr-10 mb-6 bg-gray-400',
+            'stored' => 'ml-10 mr-10 mb-6 bg-green-500',
+            'updated' => 'ml-10 mr-10 mb-6 bg-green-700',
+            'deleted' => 'ml-10 mr-10 mb-6 bg-red-500',
+            'queued' => 'ml-10 mr-10 mb-6 bg-green-500',
         ],
 
         'bootstrap' => [
@@ -90,7 +90,7 @@ return [
         /*
          * Determine if the package will use the included validations errors view
          */
-        'enabled' => true,
+        'enabled' => false,
 
         /*
          * Path to errors view. Only available if "validations.enabled" is true.
@@ -105,7 +105,7 @@ return [
             /**
              * Any tailwindcss class
              */
-            'tailwind' => 'ml-10 mr-10 bg-red-600 text-white text-sm',
+            'tailwind' => 'ml-10 mr-10 mb-6 bg-red-600 text-white text-sm',
 
             /**
              * Should be any available bootstrap alert type: success, warning, danger, etc.

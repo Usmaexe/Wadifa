@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\UserController;
 use App\Models\Listing;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -32,9 +34,29 @@ Route::get('/listings/{listing}/edit',[ListingController::class,'edit']);
 //Update a single Listing
 Route::put('/listings/{listing}',[ListingController::class,'update']);
 
+//Delete a single Listing
+Route::delete('/listings/{listing}',[ListingController::class,'destroy']);
+
 // Listing is an elloquent model 
 // Binding listing here allow us to access it's id directly  
 Route::get('/listings/{listing}',[ListingController::class,'show']);
+
+
+//Show Register Form
+Route::get('/register',[UserController::class,'register']);
+
+//Show Login Form
+Route::get('/login',[UserController::class,'login']);
+
+//Show Login Form
+Route::post('/users/authenticate',[UserController::class,'authenticate']);
+
+//Create A New User
+Route::post('/users',[UserController::class,'store']);
+
+//Log User Out
+Route::post('/logout',[UserController::class,'logout']);
+
 
 
 // Common Resource Routes:

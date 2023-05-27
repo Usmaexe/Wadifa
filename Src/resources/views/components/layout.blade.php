@@ -24,24 +24,48 @@
     <body class="mb-48">
         <nav class="flex justify-between items-center mb-4">
             <a href="/"
-                ><img class="w-24" src={{asset("images/logoNoBg.png")}} alt="" class="logo"
+                ><img class="w-24 m-4" src={{asset("images/logoNoBg.png")}} alt=""
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
-                <li>
-                    <a href="register.html" class="hover:text-laravel">
-                        <i class="fa-solid fa-user-plus"></i>Register</a
-                    >
-                </li>
-                <li>
-                    <a href="login.html" class="hover:text-laravel">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        Login
-                    </a>
-                </li>
-            </ul>
+              
+            <ul class="flex space-x-6 mr-6 text-lg">    
+                @auth
+                    <li>
+                        <span class="font-bold uppercase">
+                            Welcome {{auth()->user()->name}}
+                        </span>
+                    </li>
+                    <li>
+                        <a href="/listings/manage" class="hover:text-laravel">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Manage Listings
+                        </a>
+                    </li>
+                    <li>
+                      <form action="/logout" class="inline" method="post">
+                        @csrf
+                        <button type="submit" class="hover:text-laravel">
+                            <i class="fa-solid fa-sign-out"></i>
+                            Logout
+                        </button>
+                      </form>
+                    </li>
+                @else
+                    <li>
+                        <a href="/register" class="hover:text-laravel">
+                            <i class="fa-solid fa-user-plus"></i>  Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login" class="hover:text-laravel">
+                            <i class="fa-solid fa-right-to-bracket"></i>  Login
+                        </a>
+                    </li>
+                @endauth    
+            </ul>  
         </nav>
         <x-flash::message/>
         <main>
+            {{-- This Component is used to bind views --}}
           {{$slot}}
         </main>
         
