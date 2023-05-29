@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -20,17 +21,16 @@ class UserController extends Controller
     //Authentification
     public function authenticate(Request $request){
         $formFields = $request->validate([
-            'email' => ['required', 'email', Rule::unique('users','email')],
-            'password' => 'required|confirmed|min:6' //it verify that the field called password_confirmation is identique to this field.
+            'email' => ['required', 'email'],
+            'password' => 'required'
         ]);
 
         if(auth()->attempt($formFields)){
             $request->session()->regenerate();
             flash()->success('You have successfully Loged In! Welcome Back!');
-            return('/');
+            return redirect('/');
         }
-        
-        dd($request);
+
         return back()->withErrors(['email'=>'invalid Credentials'])->onlyInput('email');
     }
 
@@ -38,7 +38,9 @@ class UserController extends Controller
     public function store(Request $request){
         $formFields=$request->validate([
             'name' => ['required', 'min:3'],
-            'email' => ['required', 'email', Rule::unique('users','email')],
+            'email' => ['required', 'email', Rule::unique('users','email')],//Rule::unique method allow us to check that there is no email like this one in the users table
+            'remember_token' => Str::random(10),
+            'email_verified_at' => now(),
             'password' => 'required|confirmed|min:6' //it verify that the field called password_confirmation is identique to this field.
         ]);
 

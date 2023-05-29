@@ -7,7 +7,7 @@
                         <h2 class="text-2xl font-bold uppercase mb-1">
                             Create a Listing
                         </h2>
-                        <p class="mb-4">Post a Listing To Hire. We Will Help You To Find The Profile You Want In 7Days with Premium</p>
+                        <p class="mb-4">Post a Listing To Hire.  </p>
                     </header>
 
                     <form method="POST" action="/listings" enctype="multipart/form-data">
@@ -148,6 +148,7 @@
                         </div>
 
                         <div class="mb-6">
+                            <div class="mb-3"><i style="font-size:16px">We Will Help You To Find The Profile You Want In 7Days with Premium</i></div>
                             <button
                                 class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                             >

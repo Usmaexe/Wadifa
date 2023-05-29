@@ -45,7 +45,7 @@
                       </a>
                   </li>
                   <li>
-                    <form action="/logout" class="inline" method="post"></form>
+                    <form action="/logout" class="inline" method="post">
                       @csrf
                       <button type="submit" class="hover:text-laravel">
                           <i class="fa-solid fa-sign-out"></i>
