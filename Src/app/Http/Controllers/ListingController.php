@@ -56,6 +56,7 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('CompanyLogos','public');
         }
 
+        $formFields['user_id'] = auth()->id();
         Listing::create($formFields);
 
         // flash messages package
@@ -90,6 +91,8 @@ class ListingController extends Controller
             $formFields['logo'] = $request->file('logo')->store('CompanyLogos','public');
         }
 
+        $formFields['user_id'] = auth()->id();
+
         $listing->update($formFields);
 
         // flash messages package
@@ -103,5 +106,10 @@ class ListingController extends Controller
         $listing->delete();
         flash()->deleted('The Job Listing Has Been Deleted Succefully!');
         return redirect('/listings');
+    }
+
+    //Managing The Listing of each user
+    public function manage(){
+        return view('listings.manage',['listings' => auth()->user()->listings]);
     }
 }

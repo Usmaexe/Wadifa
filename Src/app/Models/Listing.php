@@ -27,4 +27,9 @@ class Listing extends Model
             ;
         }
     }
+    // RelationShip To user
+    public function user(){
+        // user_id isn't necesssary cause it automatically checks the foreign id that is specified as a primary key in the other table
+        return $this ->belongsTo(User::class,'user_id');
+    }
 }
