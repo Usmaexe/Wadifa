@@ -41,6 +41,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/listings" class="hover:text-laravel">
+                            <i class="fa-solid fa-list"></i>
+                            All Listings
+                        </a>
+                    </li>
+                    <li>
                       <form action="/logout" class="inline" method="post">
                         @csrf
                         <button type="submit" class="hover:text-laravel">
@@ -66,7 +72,7 @@
         <x-flash::message/>
         <main>
             {{-- This Component is used to bind views --}}
-          {{$slot}}
+            {{$slot}}
         </main>
         
         <footer

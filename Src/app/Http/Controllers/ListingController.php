@@ -76,6 +76,12 @@ class ListingController extends Controller
     //Store The Updated Information
     public function update(Request $request,Listing $listing){
 
+
+        // Make sure logged in user is owner
+        if($listing->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+
         // The request variable is an array contain all the data that are sent by a page to the app
         $formFields = $request->validate([
             'title' => 'required',
@@ -103,6 +109,11 @@ class ListingController extends Controller
 
     //Delete Listing
     public function destroy(Listing $listing){
+        // Make sure logged in user is owner
+        if($listing->user_id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+
         $listing->delete();
         flash()->deleted('The Job Listing Has Been Deleted Succefully!');
         return redirect('/listings');
